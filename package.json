@@ -49,13 +49,13 @@
             {
                 "language": "ink",
                 "scopeName": "source.ink",
-                "path": "./syntaxes/ink.tmLanguage.json"
+                "path": "./syntaxes/ink.tmLanguage"
             }
         ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
-        "compile": "js-yaml syntaxes/ink.tmLanguage.yaml > syntaxes/ink.tmLanguage.json && tsc -p ./",
+        "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./"
     },
     "devDependencies": {
