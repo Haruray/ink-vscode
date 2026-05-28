@@ -14,13 +14,10 @@
     "license": "MIT",
     "publisher": "bruno-dias",
     "engines": {
-        "vscode": "^1.16.0"
+        "vscode": "^1.120.0"
     },
     "categories": [
-        "Languages"
-    ],
-    "activationEvents": [
-        "onLanguage:ink"
+        "Programming Languages"
     ],
     "main": "./out/src/extension",
     "keywords": [
@@ -52,19 +49,20 @@
             {
                 "language": "ink",
                 "scopeName": "source.ink",
-                "path": "./syntaxes/ink.tmLanguage"
+                "path": "./syntaxes/ink.tmLanguage.json"
             }
         ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
+        "compile": "js-yaml syntaxes/ink.tmLanguage.yaml > syntaxes/ink.tmLanguage.json && tsc -p ./",
+        "watch": "tsc -watch -p ./"
     },
     "devDependencies": {
-        "@types/node": "^8.0.34",
-        "typescript": "^2.5.3",
-        "vscode": "^1.1.6"
+        "@types/node": "^25.9.1",
+        "@types/vscode": "^1.120.0",
+        "js-yaml": "^4.1.1",
+        "typescript": "^6.0.3",
+        "vscode-test": "^1.4.1"
     }
 }
